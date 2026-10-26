@@ -21,18 +21,19 @@ body{
 .glow{position:fixed;border-radius:50%;filter:blur(110px);pointer-events:none}
 .glow-blue{width:60vmax;height:60vmax;left:-20vmax;bottom:-30vmax;background:var(--blue);opacity:.38}
 .glow-purple{width:30vmax;height:30vmax;right:-8vmax;top:-12vmax;background:var(--purple);opacity:.32}
-main{position:relative;z-index:1;padding:2rem;text-align:left;width:min(90%,820px)}
-h1{
-  font-size:clamp(3.5rem,15vw,10rem);
-  line-height:.92;
-  font-weight:800;
-  letter-spacing:-.04em;
-  background:linear-gradient(100deg,var(--sky) 0%,var(--blue) 55%,var(--purple) 100%);
-  -webkit-background-clip:text;background-clip:text;
-  color:transparent;
+main{position:relative;z-index:1;padding:2rem;text-align:center}
+.download{
+  display:inline-block;
+  padding:1.1rem 2.6rem;
+  font-size:clamp(1.1rem,3vw,1.5rem);
+  font-weight:700;
+  letter-spacing:.01em;
+  color:#fff;
+  text-decoration:none;
+  border-radius:999px;
+  background:linear-gradient(100deg,var(--blue),var(--purple));
+  box-shadow:0 0 40px rgba(31,107,255,.45);
+  transition:transform .15s ease,box-shadow .15s ease;
 }
-p{margin-top:1.75rem;font-size:clamp(1rem,2.4vw,1.3rem);color:var(--muted);letter-spacing:.01em}
-@media (prefers-reduced-motion:no-preference){
-  h1{animation:rise 1.2s ease-out both}
-  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-}
+.download:hover{transform:translateY(-2px);box-shadow:0 0 60px rgba(123,63,228,.6)}
+.download:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
